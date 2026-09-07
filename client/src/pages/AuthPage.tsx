@@ -28,6 +28,13 @@ export function AuthPage({ mode }: { mode: "login" | "register" }) {
       const user = mode === "login"
         ? await login(email, password)
         : await register(name, email, password, role, adminKey);
+
+      if (!user) {
+         throw new Error(
+              "Authentication succeeded, but no user data was returned."
+         );
+       }
+      
       navigate(user.role === "admin" ? "/admin" : "/dashboard", { replace: true });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
