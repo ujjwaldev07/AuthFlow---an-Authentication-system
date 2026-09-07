@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { useState, type FormEvent} from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Eye, EyeOff, KeyRound, LockKeyhole, Mail, Shield, UserRound } from "lucide-react";
 import { Logo } from "../components/Logo";
