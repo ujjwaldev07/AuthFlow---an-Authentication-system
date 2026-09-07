@@ -15,9 +15,7 @@ app.use(cors({
 }));
 app.use(express.json({ limit: "20kb" }));
 
-app.use("/api/", (req, res) => {
-     res.json({ message: 'Backend is running successfully'});
-});
+
 
 app.use("/api/auth", rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -26,7 +24,13 @@ app.use("/api/auth", rateLimit({
   legacyHeaders: false
 }));
 
-app.get("/api/health", (req, res) => res.json({ ok: true }));
+app.get("/api/health", (req, res) => {
+  res.json({
+    ok: true,
+    message: "Backend is running successfully",
+  });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
 
