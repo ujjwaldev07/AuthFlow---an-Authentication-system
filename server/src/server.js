@@ -11,9 +11,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:5174"
+  origin: process.env.CLIENT_URL || "https://authflow-authentication-sytem-jfj3ljl5f-my-5d2b.vercel.app"
 }));
 app.use(express.json({ limit: "20kb" }));
+
+app.use("/api/", (req, res) => {
+     res.json({ message: 'Backend is running successfully'});
+});
 
 app.use("/api/auth", rateLimit({
   windowMs: 15 * 60 * 1000,
