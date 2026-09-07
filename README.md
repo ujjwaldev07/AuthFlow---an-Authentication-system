@@ -26,10 +26,10 @@ npm run dev
 
 Required `.env`:
 ```env
-PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/auth_fullstack
+PORT=backend_port_number
+MONGO_URI=mongodb_connection_string
 JWT_SECRET=replace_with_a_long_random_secret
-CLIENT_URL=http://localhost:5173
+CLIENT_URL=frontend_url
 ```
 
 ## 2. Frontend
@@ -42,7 +42,7 @@ npm run dev
 
 `.env`:
 ```env
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=backend_url
 ```
 
 Demo accounts can be created from the UI. Admin registration is intentionally restricted by an `ADMIN_REGISTRATION_KEY` configured on the server.
