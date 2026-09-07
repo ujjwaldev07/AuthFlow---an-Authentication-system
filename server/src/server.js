@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: process.env.CLIENT_URL || "https://authflow-authentication-sytem-q7j9652fz-my-5d2b.vercel.app"
+  origin: process.env.CLIENT_URL || "https://authflow-authentication-sytem-68c7q55d1-my-5d2b.vercel.app"
 }));
 app.use(express.json({ limit: "20kb" }));
 
