@@ -27,3 +27,4 @@ export const api = {
   logout: () => request<{ message: string }>("/auth/logout", { method: "POST" }),
   adminDashboard: () => request<{ message: string; admin: User }>("/admin/dashboard")
 };
+
