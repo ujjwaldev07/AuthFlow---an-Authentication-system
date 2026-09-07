@@ -43,6 +43,7 @@ router.post("/register", async (req, res, next) => {
 
     const token = signToken(user);
     res.status(201).json({
+      message: 'Registration successful',
       token,
       user: { id: user._id, name: user.name, email: user.email, role: user.role }
     });
@@ -65,6 +66,7 @@ router.post("/login", async (req, res, next) => {
 
     const token = signToken(user);
     res.json({
+      message: "Login successful",
       token,
       user: { id: user._id, name: user.name, email: user.email, role: user.role }
     });
